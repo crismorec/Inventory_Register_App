@@ -1,0 +1,36 @@
+﻿@model Persons_.Models.PersonsData
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalles del Producto</h2>
+
+<div>
+    <h4>PersonsData</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nombre del Producto
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            Precio del Producto
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+        <dt>
+            Cantidad Disponible
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Sex)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Editar</a> |
+    <a asp-action="Index">Volver a la lista</a>
+</div>

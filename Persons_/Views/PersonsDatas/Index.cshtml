@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Persons_.Models.PersonsData>
+
+@{
+    ViewData["Title"] = "Productos en Inventario";
+}
+
+    <h2>Productos en Inventario</h2>
+
+<p>
+    <a asp-action="Create">Crear producto</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                Precio (USD)
+            </th>
+            <th>
+                Cantidad Disponible
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sex)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Ver Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Eliminar producto</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

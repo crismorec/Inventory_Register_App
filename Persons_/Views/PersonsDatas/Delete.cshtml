@@ -1,0 +1,39 @@
+﻿@model Persons_.Models.PersonsData
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar Producto</h2>
+
+<h3>¿ Estás seguro de eliminar el producto?</h3>
+<div>
+    <h4>PersonsData</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nombre del Producto
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            Precio del Producto
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+        <dt>
+            Cantidad Disponible
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Sex)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ID" />
+        <input type="submit" value="Eliminar Producto" class="btn btn-default" /> |
+        <a asp-action="Index">Volver a la lista</a>
+    </form>
+</div>
